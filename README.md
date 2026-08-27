@@ -1,13 +1,15 @@
 # Elastic-Stack---The-Basic-
 Understand how SOC analysts use the elastic stack (ELK) for log investigations.
 
-# 🔍 Elastic Stack (ELK) - SOC Basics
+# 🔍 Elastic Stack (ELK) - SOC Log Investigation
 
-Understand how SOC analysts use the Elastic Stack (ELK) for log investigation.
+Understand how SOC analysts use the Elastic Stack (ELK) for real-world log analysis, threat detection, and security investigations.
 
 ---
 
 ## 📊 Dashboard Overview
+
+Below dashboards show how logs are visualized inside Kibana:
 
 <img src="https://github.com/user-attachments/assets/1756f3c3-ac3e-47ba-99fc-f50b760d573b" />
 
@@ -21,81 +23,14 @@ Understand how SOC analysts use the Elastic Stack (ELK) for log investigation.
 
 ## 🔎 KQL (Kibana Query Language)
 
-With KQL, we can search logs in two ways:
-- Free-text search
-- Field-based search
+KQL is used by SOC analysts to search and filter logs efficiently inside Kibana.
+
+We can search logs in two ways:
+
+- 🔹 Free-text search  
+- 🔹 Field-based search  
 
 ---
 
-### 🔹 Field-Based Search
+### 🧪 Example 1: Free-text search
 
-**Query:**
-```
-"United States"
-```
-
----
-
-**Wildcard Search:**
-```
-United*
-```
-
----
-
-## ⚙️ Logical Operators
-
-### AND
-```
-"United States" AND "Virginia"
-```
-
-### OR
-```
-"United States" OR "England"
-```
-
-### NOT
-```
-"United States" AND NOT ("Florida")
-```
-
----
-
-## 🧠 Field-Based Query Example
-
-```
-Source_ip: 238.163.231.224 AND UserName: Suleman
-```
-
-📌 This shows logs where:
-- Source IP matches
-- Username matches
-
----
-
-## 🎥 Log Investigation Demo
-
-<img src="https://github.com/user-attachments/assets/ebbe6449-2826-47c7-b64c-15c3f9816b9f" />
-
----
-
-## 📈 Creating Visualizations
-
-### Failed VPN Login Attempts
-
-- Data View: `vpn_connections`
-- Time Range: January 2022
-- Filter: `action: failed`
-- Fields: `UserName`, `Source_ip`
-
-<img src="https://cdn-images.tryhackme.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/93e9aebb89efb58df9ab5a52eeb0177c.gif" />
-
----
-
-# 🚀 Conclusion
-
-This lab demonstrates how SOC analysts:
-- Search logs using KQL  
-- Filter suspicious activity  
-- Visualize failed login attempts  
