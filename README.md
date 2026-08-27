@@ -1,69 +1,101 @@
 [ELASTIC-STACK-SEIM.md](https://github.com/user-attachments/files/31527335/ELASTIC-STACK-SEIM.md)# Elastic-Stack---The-Basic-
 Understand how SOC analysts use the elastic stack (ELK) for log investigations.
 
-[Uploadin# SEIM
+# 🔍 Elastic Stack (ELK) - SOC Basics
 
-# **`Elasticsearch - KQL (Kibana Query Language)`**
+Understand how SOC analysts use the Elastic Stack (ELK) for log investigation.
+
+---
+
+## 📊 Dashboard Overview
+
+<img src="https://github.com/user-attachments/assets/1756f3c3-ac3e-47ba-99fc-f50b760d573b" />
+
+<img src="https://github.com/user-attachments/assets/45b28b42-6286-4d82-b595-fa14ed52d9a4" />
+
+<img src="https://github.com/user-attachments/assets/932f0cb8-3cac-4f7e-a338-5486e7f2ab2b" />
+
+<img src="https://github.com/user-attachments/assets/14f67648-5b19-4219-8c2a-9a741b11d765" />
+
+---
+
+## 🔎 KQL (Kibana Query Language)
 
 With KQL, we can search logs in two ways:
-
 - Free-text search
 - Field-based search
 
-**Field-based search:**
+---
 
-**Search Query:** `"United States"` 
+### 🔹 Field-Based Search
 
-![image.png](image.png)
+**Query:**
+```
+"United States"
+```
 
-**Search Query:** `United*` 
+---
 
-![image.png](image%201.png)
+**Wildcard Search:**
+```
+United*
+```
 
-## `Logical Operators (AND | OR | NOT)`
+---
 
-## **1. AND Operator**
+## ⚙️ Logical Operators
 
-Use the **AND** operator to create a search that returns logs containing both `"United States"` and `"Virginia"`.
+### AND
+```
+"United States" AND "Virginia"
+```
 
-**Search Query:** `"United States" AND "Virginia"`
+### OR
+```
+"United States" OR "England"
+```
 
-![image.png](image%202.png)
+### NOT
+```
+"United States" AND NOT ("Florida")
+```
 
-## **2. OR Operator**
+---
 
-Use the **OR** operator to return logs that contain either `United States` or `England`.
+## 🧠 Field-Based Query Example
 
-**Search Query:** `"United States" OR "England"` 
+```
+Source_ip: 238.163.231.224 AND UserName: Suleman
+```
 
-![image.png](image%203.png)
+📌 This shows logs where:
+- Source IP matches
+- Username matches
 
-## **3. NOT Operator**
+---
 
-Similarly, use the **NOT** operator to exclude a term from the search results. This query returns logs from **the United States** (including all states) while ignoring Florida.
+## 🎥 Log Investigation Demo
 
-**Search Query:** `"United States" AND NOT ("Florida")` 
+<img src="https://github.com/user-attachments/assets/ebbe6449-2826-47c7-b64c-15c3f9816b9f" />
 
-![image.png](image%204.png)
+---
 
-## **Field-based search:**
+## 📈 Creating Visualizations
 
-**Search Query:** `Source_ip : 238.163.231.224 AND UserName : Suleman`
+### Failed VPN Login Attempts
 
-**Explanation:** This query tells Kibana to display all logs where `Source_ip` contains `238.163.231.224` and `UserName` is `Suleman`, as shown below.
+- Data View: `vpn_connections`
+- Time Range: January 2022
+- Filter: `action: failed`
+- Fields: `UserName`, `Source_ip`
 
-![ffbf735277d98273d6229f4d9ee586bf.gif](ffbf735277d98273d6229f4d9ee586bf.gif)
+<img src="https://cdn-images.tryhackme.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/93e9aebb89efb58df9ab5a52eeb0177c.gif" />
 
-## `Creating Visualizations`
+---
 
-## Create Visualization
+# 🚀 Conclusion
 
-There are a few ways to navigate to the Visualization tab. One approach is to click any field in the Discover tab, then select **Visualize**, as shown below.
-
-![](https://cdn-images.tryhackme.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/334ed7c0a1e727de35844174434fd4fc.gif)
-
-## **`Failed Connection Attempts Visualization`**
-
-**Failed attempts filter:** For the failed connection visualisation, use the `vpn_connections` data view, set the time picker to include January 2022, then filter for `action: failed`. Do not exclude failed events; the table should only show failed VPN connection attempts. Use `UserName` and `Source_ip` as the table fields.
-
-![](https://cdn-images.tryhackme.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/93e9aebb89efb58df9ab5a52eeb0177c.gif)g ELASTIC-STACK-SEIM.md…]()
+This lab demonstrates how SOC analysts:
+- Search logs using KQL  
+- Filter suspicious activity  
+- Visualize failed login attempts  
