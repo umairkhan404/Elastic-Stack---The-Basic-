@@ -15,7 +15,7 @@ Below dashboards show how logs are visualized inside Kibana:
 
 <img src="https://github.com/user-attachments/assets/45b28b42-6286-4d82-b595-fa14ed52d9a4" />
 
-<img src="https://github.com/user-attachments/assets/932f0cb8-3cac-4f7e-a338-5486e7f2ab2b" />
+<img width="1739" height="673" alt="image" src="https://github.com/user-attachments/assets/fbebeff4-4606-4c35-a153-3d57f8e4daae" />
 
 <img src="https://github.com/user-attachments/assets/14f67648-5b19-4219-8c2a-9a741b11d765" />
 
@@ -32,15 +32,16 @@ We can search logs in two ways:
 
 ---
 
-### 🧪 Example 1: Free-text search
+### 🧪  Free-text search
+ <img width="1739" height="673" alt="image" src="https://github.com/user-attachments/assets/23491f0d-451e-4792-af37-0f0773cfe18d" />
 
 
 👉 This returns all logs containing the phrase **United States**
 
 ---
 
-### 🧪 Example 2: Wildcard search
-
+### 🧪  Wildcard search
+<img width="1633" height="630" alt="image 1" src="https://github.com/user-attachments/assets/e0be803b-4e0b-4381-9d24-37ed2aa0dad3" />
 
 👉 This returns all values starting with “United”  
 (e.g. United States, United Kingdom)
@@ -54,6 +55,7 @@ SOC analysts use logical operators to refine search results.
 ---
 
 ### 🔹 AND Operator
+<img width="1634" height="627" alt="image 4" src="https://github.com/user-attachments/assets/724b9bfe-2c9d-4249-b1f3-800643b37d30" />
 
 
 👉 Shows logs that contain **both values**
@@ -61,6 +63,7 @@ SOC analysts use logical operators to refine search results.
 ---
 
 ### 🔹 OR Operator
+<img width="1741" height="730" alt="image 3" src="https://github.com/user-attachments/assets/0dea6dd4-9f90-4751-9029-ce209a81a02d" />
 
 
 👉 Shows logs that contain **either value**
@@ -68,6 +71,7 @@ SOC analysts use logical operators to refine search results.
 ---
 
 ### 🔹 NOT Operator
+<img width="1634" height="627" alt="image 4" src="https://github.com/user-attachments/assets/d025ce47-ae50-42b1-9f40-4553854640c3" />
 
 
 👉 Shows logs from United States but **excludes Florida**
@@ -101,6 +105,8 @@ Below GIF shows a **real SOC workflow inside Kibana Discover tab**:
 ---
 
 ## 📈 Creating Visualizations
+
+<img src="https://github.com/user-attachments/assets/1756f3c3-ac3e-47ba-99fc-f50b760d573b" />
 
 ### 🚨 Failed VPN Login Attempts
 
