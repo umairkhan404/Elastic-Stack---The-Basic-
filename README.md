@@ -1,4 +1,4 @@
-[ELASTIC-STACK-SEIM.md](https://github.com/user-attachments/files/31527335/ELASTIC-STACK-SEIM.md)# Elastic-Stack---The-Basic-
+# Elastic-Stack---The-Basic-
 Understand how SOC analysts use the elastic stack (ELK) for log investigations.
 
 # 🔍 Elastic Stack (ELK) - SOC Basics
