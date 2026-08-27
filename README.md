@@ -147,10 +147,12 @@ By now, we have saved a few `Searches` from the `Discover tab`, created some `Vi
 
 <img width="697" height="469" alt="image" src="https://github.com/user-attachments/assets/1e5673be-b754-4c31-8368-152bf2ab3113" />
 
+
 - Click on `Add from Library.`
 - Click on the visualizations and saved searches. It will be added to the dashboard.
 - Once the items are added, adjust them accordingly, as shown below.
 - Don't forget to save the dashboard after completing it.
+
 
 <img width="1914" height="1034" alt="05016a6cc1c12d40b90ce9d29052537811-ezgif com-optimize" src="https://github.com/user-attachments/assets/0d966a1a-49bf-4d74-bd98-4ddefcfcc8bf" />
 
