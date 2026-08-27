@@ -34,3 +34,121 @@ We can search logs in two ways:
 
 ### 🧪 Example 1: Free-text search
 
+
+👉 This returns all logs containing the phrase **United States**
+
+---
+
+### 🧪 Example 2: Wildcard search
+
+
+👉 This returns all values starting with “United”  
+(e.g. United States, United Kingdom)
+
+---
+
+## ⚙️ Logical Operators in KQL
+
+SOC analysts use logical operators to refine search results.
+
+---
+
+### 🔹 AND Operator
+
+
+👉 Shows logs that contain **both values**
+
+---
+
+### 🔹 OR Operator
+
+
+👉 Shows logs that contain **either value**
+
+---
+
+### 🔹 NOT Operator
+
+
+👉 Shows logs from United States but **excludes Florida**
+
+---
+
+## 🧠 Field-Based Query Example
+
+
+📌 This query filters logs where:
+- Source IP matches attacker/host IP
+- Username matches specific user
+
+---
+
+## 🎥 Log Investigation Demo (GIF Explained)
+
+Below GIF shows a **real SOC workflow inside Kibana Discover tab**:
+
+<img src="https://github.com/user-attachments/assets/ebbe6449-2826-47c7-b64c-15c3f9816b9f" />
+
+### 🧠 What is happening in this GIF?
+
+✔ Logs are being searched inside Kibana  
+✔ SOC analyst is filtering events using KQL  
+✔ Relevant events are being isolated from large datasets  
+✔ Suspicious activity patterns are identified  
+
+👉 Basically, this shows how SOC analysts move from **raw logs → filtered insights → investigation**
+
+---
+
+## 📈 Creating Visualizations
+
+### 🚨 Failed VPN Login Attempts
+
+SOC analysts often visualize failed login attempts to detect:
+
+- brute force attacks  
+- suspicious access patterns  
+- unauthorized access attempts  
+
+---
+
+### 🔧 Setup details:
+
+- Data View: `vpn_connections`  
+- Time Range: January 2022  
+- Filter: `action: failed`  
+- Fields used: `UserName`, `Source_ip`  
+
+---
+
+### 🎥 Visualization GIF (Explained)
+
+<img src="https://cdn-images.tryhackme.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/93e9aebb89efb58df9ab5a52eeb0177c.gif" />
+
+### 🧠 What this GIF shows:
+
+✔ Creating a visualization in Kibana  
+✔ Filtering failed VPN login attempts  
+✔ Building a table/chart from raw logs  
+✔ Turning logs into actionable security insights  
+
+👉 This is how SOC analysts convert **logs → visual threat detection dashboards**
+
+---
+
+# 🚀 Conclusion
+
+This lab demonstrates core SOC analyst skills:
+
+✔ Searching logs using KQL  
+✔ Filtering suspicious activity  
+✔ Investigating authentication events  
+✔ Creating visual dashboards  
+✔ Turning raw logs into security insights  
+
+---
+
+💡 **Key takeaway:**  
+Elastic Stack helps SOC analysts detect threats faster by making huge log data searchable and visual.
+
+
