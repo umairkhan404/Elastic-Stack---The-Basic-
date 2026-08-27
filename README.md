@@ -144,6 +144,7 @@ SOC analysts often visualize failed login attempts to detect:
 ## **`Creating a Custom Dashboard`**
 
 By now, we have saved a few `Searches` from the `Discover tab`, created some `Visualizations`, and saved them. It's time to explore the dashboard tab and create a custom dashboard. The steps to create a dashboard are:
+
 <img width="697" height="469" alt="image" src="https://github.com/user-attachments/assets/1e5673be-b754-4c31-8368-152bf2ab3113" />
 
 - Click on `Add from Library.`
