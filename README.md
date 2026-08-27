@@ -126,11 +126,6 @@ SOC analysts often visualize failed login attempts to detect:
 - Fields used: `UserName`, `Source_ip`  
 
 ---
-
-### 🎥 Visualization GIF (Explained)
-
-<img src="https://cdn-images.tryhackme.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/93e9aebb89efb58df9ab5a52eeb0177c.gif" />
-
 ### 🧠 What this GIF shows:
 
 ✔ Creating a visualization in Kibana  
