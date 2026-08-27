@@ -1,3 +1,4 @@
+<img width="1914" height="966" alt="93e9aebb89efb58df9ab5a52eeb0177c (1)" src="https://github.com/user-attachments/assets/e5824876-740b-44bb-a03b-9f7890416eda" />
 # SEIM
 
 # **`Elasticsearch - KQL (Kibana Query Language)`**
@@ -63,4 +64,5 @@ There are a few ways to navigate to the Visualization tab. One approach is to cl
 
 **Failed attempts filter:** For the failed connection visualisation, use the `vpn_connections` data view, set the time picker to include January 2022, then filter for `action: failed`. Do not exclude failed events; the table should only show failed VPN connection attempts. Use `UserName` and `Source_ip` as the table fields.
 
-https://cdn-images.tryhackme.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/93e9aebb89efb58df9ab5a52eeb0177c.gif
+<img width="1914" height="966" alt="93e9aebb89efb58df9ab5a52eeb0177c" src="https://github.com/user-attachments/assets/0c87d0f1-2ad4-40d9-87ad-18e135c2bbda" />
+
