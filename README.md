@@ -177,3 +177,46 @@ Practiced triaging security alerts in a simulated SOC environment — classifyin
 
 <img width="1886" height="967" alt="image" src="https://github.com/user-attachments/assets/1c26d38b-7db0-4ecc-b16c-3398fd0627a7" />
 
+I assigned these alerts as True Positive, since they involved phishing tactics using a malicious URL.
+
+
+<img width="660" height="330" alt="image" src="https://github.com/user-attachments/assets/ee5778a0-2f4a-43f6-b67d-1d32dc054562" />
+
+The alert severity was High on the dashboard, so it was important to prioritize this alert as it appeared to be a real attack. As an L1 SOC analyst, the first step was to check the URL using an analysis tool, referencing the MITRE ATT&CK framework for context.
+
+<img width="1882" height="435" alt="image" src="https://github.com/user-attachments/assets/c875a13a-8d39-4237-bec2-6392e3eb0d6d" />
+
+<img width="1882" height="435" alt="image" src="https://github.com/user-attachments/assets/2e04dfe0-3ff2-48fe-970b-f4ba4e69d343" />
+
+<img width="1797" height="560" alt="image" src="https://github.com/user-attachments/assets/b0969bbb-c3d0-434c-a69e-234a69048f61" />
+
+After assigning the alert to myself, I analyzed it and wrote a case report explaining the alert triage details for the L2 analyst to continue further investigation.
+
+<img width="1810" height="897" alt="image" src="https://github.com/user-attachments/assets/a3cf4512-2b31-43ee-b441-3cbec2b4f02c" />
+
+<img width="1826" height="882" alt="image" src="https://github.com/user-attachments/assets/1f1552a5-eb82-442d-9822-0c171b069988" />
+
+I used the SIEM tool (Kibana Discover) to investigate in depth. In this screenshot, I investigated the repeated IP address and the repeated requests sent by the attacker. In this scenario, I looked at the malicious source IP that was blocked by the firewall due to the rules set in place.
+
+<img width="1906" height="977" alt="image" src="https://github.com/user-attachments/assets/a9ff32fd-43a2-4265-8098-29e186ba7fce" />
+
+Log 1 (blocked, port 80): a bit.ly shortened link → this is what triggered the block, since shortened/obfuscated URLs are commonly used to hide phishing destinations, and it was likely already listed in threat intel/blacklist feeds.
+Log 2 (allowed, port 443): a direct google.com search query about payroll systems → clean, legitimate traffic, unrelated to the blocked request.
+
+The same internal source IP generated two separate requests. One was a shortened bit.ly link on port 80, which the firewall blocked as it matched a known-malicious/blacklisted URL. The other was a legitimate Google search on port 443, related to payroll system research, which was correctly allowed. This shows the value of correlating multiple log entries from the same host to distinguish malicious activity from normal user behavior.
+
+That's why I'm doing a deeper investigation in the Elastic Stack (SIEM), because sometimes I need to look at the attacker's tactics, or check whether an employee accessed a fake attacker link while browsing what appeared to be a normal URL. Sometimes attackers leave a trap on a duplicate website — the employee believes it's the real site, but in the backend they get redirected to the attacker's webpage. That's why the firewall blocked the malicious URL on port 80, while port 443 was allowed as normal traffic, depending on the rule set in each case.
+
+<img width="1911" height="933" alt="image" src="https://github.com/user-attachments/assets/0825cf1f-205d-4a4f-b997-a8606417dd1d" />
+
+Escalation Report – Alert ID: 8816
+
+<img width="1847" height="945" alt="image" src="https://github.com/user-attachments/assets/b81ebc1c-6f3d-49bb-bbd9-3c1c65397d2b" />
+
+<img width="1865" height="967" alt="image" src="https://github.com/user-attachments/assets/213a57e2-2bfb-4f41-8aea-1d5f140016d8" />
+
+After completing the investigation, I closed the alert as SOC Analyst L1.
+
+<img width="1886" height="951" alt="image" src="https://github.com/user-attachments/assets/bc9ab956-aea2-4f61-bdbf-2f3262a4d4ba" />
+
+From all of this, what I learned is how to investigate logs, how to assign an alert to myself, and how to write a case report for L2 for further investigation. I also learned how to check whether an alert is a real alarm or a false alarm, and determine if it's a false positive or true positive. I investigated this using Discover in Kibana (Elastic Stack) for log analysis, and after the investigation, I found it to be a true positive and closed the alert accordingly, as shown in the screenshots above. All of this — including the Elastic Stack — was provided by the TryHackMe platform, where I got hands-on practice for the SOC Analyst L1 role.
