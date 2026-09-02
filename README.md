@@ -172,3 +172,8 @@ This lab demonstrates core SOC analyst skills:
 💡 **Key takeaway:**  
 🛡️ Elastic Stack helps SOC analysts detect threats faster by making huge log data searchable and visual.
 
+SOC Simulation (TryHackMe)
+Practiced triaging security alerts in a simulated SOC environment — classifying alerts as true/false positives, assigning them for handling, and documenting findings in case reports for L2 escalation.
+
+<img width="1886" height="967" alt="image" src="https://github.com/user-attachments/assets/1c26d38b-7db0-4ecc-b16c-3398fd0627a7" />
+
