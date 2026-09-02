@@ -169,18 +169,23 @@ This lab demonstrates core SOC analyst skills:
 
 ---
 
-💡 **Key takeaway:**  
-🛡️ Elastic Stack helps SOC analysts detect threats faster by making huge log data searchable and visual.
+<h2>🛡️ Elastic Stack</h2>
 
-SOC Simulation (TryHackMe)
+Elastic Stack helps SOC analysts detect threats faster by making huge log data searchable and visual.
+
+<h2>SOC Simulation (TryHackMe)</h2>
+
 Practiced triaging security alerts in a simulated SOC environment — classifying alerts as true/false positives, assigning them for handling, and documenting findings in case reports for L2 escalation.
 
 <img width="1886" height="967" alt="image" src="https://github.com/user-attachments/assets/1c26d38b-7db0-4ecc-b16c-3398fd0627a7" />
 
+<h3>Alert Classification</h3>
+
 I assigned these alerts as True Positive, since they involved phishing tactics using a malicious URL.
 
-
 <img width="660" height="330" alt="image" src="https://github.com/user-attachments/assets/ee5778a0-2f4a-43f6-b67d-1d32dc054562" />
+
+<h3>Initial Triage</h3>
 
 The alert severity was High on the dashboard, so it was important to prioritize this alert as it appeared to be a real attack. As an L1 SOC analyst, the first step was to check the URL using an analysis tool, referencing the MITRE ATT&CK framework for context.
 
@@ -190,15 +195,21 @@ The alert severity was High on the dashboard, so it was important to prioritize 
 
 <img width="1797" height="560" alt="image" src="https://github.com/user-attachments/assets/b0969bbb-c3d0-434c-a69e-234a69048f61" />
 
+<h3>Case Report</h3>
+
 After assigning the alert to myself, I analyzed it and wrote a case report explaining the alert triage details for the L2 analyst to continue further investigation.
 
 <img width="1810" height="897" alt="image" src="https://github.com/user-attachments/assets/a3cf4512-2b31-43ee-b441-3cbec2b4f02c" />
 
 <img width="1826" height="882" alt="image" src="https://github.com/user-attachments/assets/1f1552a5-eb82-442d-9822-0c171b069988" />
 
+<h3>SIEM Investigation (Kibana Discover)</h3>
+
 I used the SIEM tool (Kibana Discover) to investigate in depth. In this screenshot, I investigated the repeated IP address and the repeated requests sent by the attacker. In this scenario, I looked at the malicious source IP that was blocked by the firewall due to the rules set in place.
 
 <img width="1906" height="977" alt="image" src="https://github.com/user-attachments/assets/a9ff32fd-43a2-4265-8098-29e186ba7fce" />
+
+<h3>Log Analysis</h3>
 
 Log 1 (blocked, port 80): a bit.ly shortened link → this is what triggered the block, since shortened/obfuscated URLs are commonly used to hide phishing destinations, and it was likely already listed in threat intel/blacklist feeds.
 Log 2 (allowed, port 443): a direct google.com search query about payroll systems → clean, legitimate traffic, unrelated to the blocked request.
@@ -209,14 +220,18 @@ That's why I'm doing a deeper investigation in the Elastic Stack (SIEM), because
 
 <img width="1911" height="933" alt="image" src="https://github.com/user-attachments/assets/0825cf1f-205d-4a4f-b997-a8606417dd1d" />
 
-Escalation Report – Alert ID: 8816
+<h3>Escalation Report – Alert ID: 8816</h3>
 
 <img width="1847" height="945" alt="image" src="https://github.com/user-attachments/assets/b81ebc1c-6f3d-49bb-bbd9-3c1c65397d2b" />
 
 <img width="1865" height="967" alt="image" src="https://github.com/user-attachments/assets/213a57e2-2bfb-4f41-8aea-1d5f140016d8" />
 
+<h3>Closing the Alert</h3>
+
 After completing the investigation, I closed the alert as SOC Analyst L1.
 
 <img width="1886" height="951" alt="image" src="https://github.com/user-attachments/assets/bc9ab956-aea2-4f61-bdbf-2f3262a4d4ba" />
+
+<h3>What I Learned</h3>
 
 From all of this, what I learned is how to investigate logs, how to assign an alert to myself, and how to write a case report for L2 for further investigation. I also learned how to check whether an alert is a real alarm or a false alarm, and determine if it's a false positive or true positive. I investigated this using Discover in Kibana (Elastic Stack) for log analysis, and after the investigation, I found it to be a true positive and closed the alert accordingly, as shown in the screenshots above. All of this — including the Elastic Stack — was provided by the TryHackMe platform, where I got hands-on practice for the SOC Analyst L1 role.
